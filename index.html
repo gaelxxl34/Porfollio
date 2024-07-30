@@ -33,6 +33,191 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- CSS -->
+    <style>
+*{
+    font-family: "Times New Roman", Times, serif;
+}
+        .main {
+            height: 100vh;
+            width: 100%;
+        }
+    
+        .wrapper,
+        .slide {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    
+        .slide {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 60px;
+            /* Adjust this padding to create space for the nav buttons */
+        }
+    
+        .slide::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 10;
+        }
+    
+        .slide .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            max-width: 50%;
+            /* Ensure the image container does not exceed half of the slide width */
+        }
+    
+        .slide .image-container img {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            /* Set the fixed width of the images */
+            max-height: 400px;
+            /* Set the fixed height of the images */
+        }
+    
+        .slide .image-container video {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            /* Set the fixed width of the videos */
+            max-height: 400px;
+            /* Set the fixed height of the videos */
+        }
+    
+        .slide .content-container {
+            flex: 1;
+            color: white;
+            z-index: 100;
+            padding: 15px;
+            max-width: 50%;
+            /* Ensure the content container does not exceed half of the slide width */
+        }
+    
+        .content-container h2 {
+            font-size: 45px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    
+        .content-container p {
+            font-size: 20px;
+            font-weight: 400;
+            max-width: 520px;
+            overflow-wrap: break-word;
+            margin-bottom: 15px;
+        }
+    
+        .content-container .button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    
+        .content-container .button:hover {
+            background-color: #0056b3;
+        }
+    
+        /* swiper button css */
+        .nav-btn {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+    
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+    
+        .swiper-button-next {
+            right: 10px;
+            /* Adjust the position as needed */
+        }
+    
+        .swiper-button-prev {
+            left: 10px;
+            /* Adjust the position as needed */
+        }
+    
+        .nav-btn::before,
+        .nav-btn::after {
+            font-size: 25px;
+            color: #fff;
+        }
+    
+        .swiper-pagination-bullet {
+            opacity: 1;
+            height: 12px;
+            width: 12px;
+            background-color: #fff;
+            visibility: hidden;
+        }
+    
+        .swiper-pagination-bullet-active {
+            border: 2px solid #fff;
+            background-color: #017cff;
+        }
+    
+        @media screen and (max-width: 768px) {
+            .nav-btn {
+                visibility: hidden;
+            }
+    
+            .swiper-pagination-bullet {
+                visibility: visible;
+            }
+    
+            .content-container h2 {
+                font-size: 25px;
+            }
+    
+            .content-container p {
+                font-size: 16px;
+            }
+    
+            .content-container .button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+    
+            .slide {
+                flex-direction: column;
+                padding: 0 10px;
+                /* Adjust the padding for smaller screens */
+            }
+    
+            .slide .image-container,
+            .slide .content-container {
+                flex: none;
+                width: 100%;
+                text-align: center;
+                max-width: 100%;
+                /* Ensure full width on smaller screens */
+            }
+    
+        }
+    </style>
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -79,6 +264,53 @@
         </div>
     </div>
     <!-- Video Modal End -->
+
+    <section class="main swiper mySwiper" >
+        <div class="wrapper swiper-wrapper">
+            <!-- Physic lab -->
+            <div class="slide swiper-slide" style=" background-image: url(img/Slide1.jpg);">
+                <div class="image-container">
+                    <video autoplay muted loop width="100%" height="auto">
+                        <source src="https://boratechnology.org/video/phys%20lab%20short.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+    
+                <div class="content-container">
+                    <h2 style="color: white; font-weight: bold;">Vr Phyisc Lab and Museum</h2>
+                    <p>The VR Physics Lab project provides an immersive space for conducting physics experiments and
+                        includes a museum showcasing historical scientific instruments. This combination enhances learning
+                        through interactive simulations and historical context.</p>
+                    <a href="#home" class="button">Book a Demo</a>
+                </div>
+            </div>
+            <!-- Math lab -->
+            <div class="slide swiper-slide" style=" background-image: url(img/slide2.jpg);">
+                <div class="image-container">
+                    <video autoplay muted loop width="100%" height="auto">
+                        <source src="https://boratechnology.org/video/MathLab%20vr%20short.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+    
+                <div class="content-container">
+                    <h2 style="color: white; font-weight: bold;">Vr MathLab</h2>
+                    <p>The Math Lab features a variety of educational games designed to make learning math fun and engaging.
+                        Students can play interactive games while enhancing their math skills and track their progress and
+                        marks in real-time. This innovative approach helps to motivate and improve student performance in
+                        mathematics.</p>
+                    <a href="#home" class="button">Book a Demo</a>
+                </div>
+            </div>
+           
+        </div>
+    
+        <div class="swiper-button-next nav-btn"></div>
+        <div class="swiper-button-prev nav-btn"></div>
+        <div class="swiper-pagination"></div>
+    </section>
+    
+
 
 
     <!-- Header Start -->
@@ -756,6 +988,24 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
