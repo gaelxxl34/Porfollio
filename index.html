@@ -40,9 +40,11 @@
     
     <!-- CSS -->
     <style>
-*{
-    font-family: "Times New Roman", Times, serif;
-}
+        /* Add your CSS styles here */
+        * {
+            font-family: "Times New Roman", Times, serif;
+        }
+    
         .main {
             height: 100vh;
             width: 100%;
@@ -61,7 +63,6 @@
             align-items: center;
             justify-content: center;
             padding: 0 60px;
-            /* Adjust this padding to create space for the nav buttons */
         }
     
         .slide::before {
@@ -80,25 +81,20 @@
             align-items: center;
             z-index: 100;
             max-width: 50%;
-            /* Ensure the image container does not exceed half of the slide width */
         }
     
         .slide .image-container img {
             width: 100%;
             height: auto;
             max-width: 400px;
-            /* Set the fixed width of the images */
             max-height: 400px;
-            /* Set the fixed height of the images */
         }
     
         .slide .image-container video {
             width: 100%;
             height: auto;
             max-width: 400px;
-            /* Set the fixed width of the videos */
             max-height: 400px;
-            /* Set the fixed height of the videos */
         }
     
         .slide .content-container {
@@ -107,7 +103,6 @@
             z-index: 100;
             padding: 15px;
             max-width: 50%;
-            /* Ensure the content container does not exceed half of the slide width */
         }
     
         .content-container h2 {
@@ -137,7 +132,6 @@
             background-color: #0056b3;
         }
     
-        /* swiper button css */
         .nav-btn {
             height: 50px;
             width: 50px;
@@ -151,12 +145,10 @@
     
         .swiper-button-next {
             right: 10px;
-            /* Adjust the position as needed */
         }
     
         .swiper-button-prev {
             left: 10px;
-            /* Adjust the position as needed */
         }
     
         .nav-btn::before,
@@ -203,7 +195,6 @@
             .slide {
                 flex-direction: column;
                 padding: 0 10px;
-                /* Adjust the padding for smaller screens */
             }
     
             .slide .image-container,
@@ -212,9 +203,7 @@
                 width: 100%;
                 text-align: center;
                 max-width: 100%;
-                /* Ensure full width on smaller screens */
             }
-    
         }
     </style>
 
@@ -270,7 +259,7 @@
             <!-- Physic lab -->
             <div class="slide swiper-slide" style=" background-image: url(img/Slide1.jpg);">
                 <div class="image-container">
-                    <video autoplay muted loop width="100%" height="auto">
+                    <video controls autoplay width="100%" height="auto">
                         <source src="https://boratechnology.org/video/phys%20lab%20short.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -287,7 +276,7 @@
             <!-- Math lab -->
             <div class="slide swiper-slide" style=" background-image: url(img/slide2.jpg);">
                 <div class="image-container">
-                    <video autoplay muted loop width="100%" height="auto">
+                    <video controls autoplay width="100%" height="auto">
                         <source src="https://boratechnology.org/video/MathLab%20vr%20short.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -353,17 +342,15 @@
                 </div>
                 <div class="col-lg-7">
                     <h3 class="mb-4">AI Developer & VR Technology Expert</h3>
-                    <p>I am a top graduate in Computer Science with a GPA of 4.5, passionate about leveraging technology to advance
-                        healthcare, immunology, and education. My career encompasses the development and commercialization of AI models,
-                        pioneering VR technology, and mentoring the next generation of tech enthusiasts. I strive to enhance both
-                        healthcare and educational outcomes through innovative solutions.</p>
+                    <p>I graduated at the top of my class in Computer Science with a GPA of 4.5, and I am dedicated to using technology to
+                        drive advancements in healthcare, immunology, and education. My career includes developing and commercializing AI
+                        models, pioneering VR technology, and mentoring future tech leaders. I aim to improve healthcare and educational
+                        outcomes through innovative and impactful solutions.</p>
                     <div class="row mb-3">
                         <div class="col-sm-6 py-2">
                             <h6>Name: <span class="text-secondary">Ongoriko Bindu Gael</span></h6>
                         </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Birthday: <span class="text-secondary">1 April 1990</span></h6>
-                        </div>
+                    
                         <div class="col-sm-6 py-2">
                             <h6>Degree: <span class="text-secondary">Bachelor of Science, Computer Science</span></h6>
                         </div>
@@ -994,8 +981,12 @@
         <!-- Initialize Swiper -->
         <script>
             var swiper = new Swiper(".mySwiper", {
-                slidesPerView: 1,
                 loop: true,
+                autoplay: {
+                    delay: 2000, // 5 seconds delay
+                    disableOnInteraction: false,
+                },
+                speed: 1000, // 1 second transition speed
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
@@ -1004,8 +995,19 @@
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 },
+                on: {
+                    init: function () {
+                        var swiperWrapper = document.getElementById('swiper-wrapper-539b8e10b91d6104a5');
+                        swiperWrapper.style.transitionDuration = '1000ms';
+                    },
+                    slideChangeTransitionStart: function () {
+                        var swiperWrapper = document.getElementById('swiper-wrapper-539b8e10b91d6104a5');
+                        swiperWrapper.style.transitionDuration = '1000ms';
+                    }
+                }
             });
         </script>
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
